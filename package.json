@@ -2,7 +2,7 @@
   "name": "vector-js",
   "version": "1.0.0",
   "description": "Create vector objects and perform vector math.",
-  "main": "index.js",
+  "main": "vector.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

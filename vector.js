@@ -1,11 +1,16 @@
-function Vector(x, y) {
+/**
+ * Represents a 2d vector.
+ * @constructor
+ * @param {Number} x - The 1st component of the vector.
+ * @param {Number} y - The 2nd component of the vector.
+ */
+var Vector = function(x, y) {
 	this.x = x || 0;
 	this.y = y || 0;
 }
 
 
 //-- Simple arithmetic --\\
-
 Vector.prototype.add = function(v) {
 	return new Vector(this.x + v.x, this.y + v.y);
 }
@@ -18,7 +23,7 @@ Vector.prototype.scale = function(n) {
 Vector.prototype.mul = function(n) { return this.scale(n); };
 Vector.prototype.div = function(n) { return this.scale(1 / n); };
 
-/** Magnitude methods */
+//-- Magnitude methods --\\
 Vector.prototype.magnitude = function() {
 	return Math.sqrt(this.sqrMag());
 }
@@ -47,7 +52,11 @@ Vector.prototype.sqrDist = function(v) {
 	return v.sub(this).sqrMag();
 }
 
-/** Dot product */
+/**
+ * Calculate the dot product
+ * @param {Vector} v
+ * @return {Number} The dot product of this vector and the given vector.
+ */
 Vector.prototype.dot = function(v) {
 	return this.x * v.x + this.y * v.y;
 }
@@ -68,3 +77,7 @@ Vector.prototype.angle = function(v) {
 Vector.prototype.angle2 = function(v) {
 	return Math.atan2(this.dot(v), this.det(v));
 }
+
+
+// Export to NPM
+module.exports = Vector;
