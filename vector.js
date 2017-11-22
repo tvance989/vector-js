@@ -10,6 +10,11 @@ var Vector = function(x, y) {
 }
 
 
+Vector.prototype.valueOf = function() {
+	return [this.x, this.y];
+}
+
+
 //-- Simple arithmetic --\\
 Vector.prototype.add = function(v) {
 	return new Vector(this.x + v.x, this.y + v.y);
