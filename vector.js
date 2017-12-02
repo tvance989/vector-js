@@ -14,6 +14,10 @@ Vector.prototype.valueOf = function() {
 	return [this.x, this.y];
 }
 
+Vector.prototype.clone = function() {
+	return new Vector(this.x, this.y);
+}
+
 
 //-- Simple arithmetic --\\
 Vector.prototype.add = function(v) {
